@@ -11,7 +11,7 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    public void SoreView()
+    public void ScoreView()
     {
         Debug.Log("Score Table Loaded!");
     }

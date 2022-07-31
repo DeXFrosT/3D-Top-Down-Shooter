@@ -11,8 +11,8 @@ public class PlayerController : MonoBehaviour
 
     private float speed;
 
-    private float zBound = 12f;
-    private float xBound = 7f;
+    private float zBound = 10.5f;
+    private float xBound = 8.5f;
 
     private float boostTimer = 0;
     private bool boosting = false;
@@ -66,9 +66,9 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(transform.position.x, transform.position.y, zBound);
         }
 
-        if (transform.position.x < -xBound)
+        if (transform.position.x < -5f)
         {
-            transform.position = new Vector3(-xBound, transform.position.y, transform.position.z);
+            transform.position = new Vector3(-5f, transform.position.y, transform.position.z);
         }
 
         if (transform.position.x > xBound)

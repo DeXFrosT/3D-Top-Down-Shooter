@@ -35,7 +35,7 @@ public class ItemsSpawner : MonoBehaviour
     // Spawn Health Position prefab at random position.
     void SpawnHealthPotion()  
     {        
-            float _spawnPosX = Random.Range(-6, 6);
+            float _spawnPosX = Random.Range(-5, 7);
             float _spawnPosZ = Random.Range(-10, 10);
 
             Vector3 _randomPos = new Vector3(_spawnPosX, 0.1f, _spawnPosZ);

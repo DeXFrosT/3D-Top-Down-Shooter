@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealthSystem : MonoBehaviour
 {
@@ -12,6 +13,10 @@ public class HealthSystem : MonoBehaviour
 
     public GameObject healthBarUI;
     public Slider slider;
+
+    public GameObject pauseMenuUI;
+    public GameObject gameOverTextUI;
+    public GameObject resumeButtonUI;
 
     void Start()
     {
@@ -31,6 +36,10 @@ public class HealthSystem : MonoBehaviour
         if (health <= 0)
         {
             Debug.Log("Game Over!");
+            Time.timeScale = 0f;
+            pauseMenuUI.SetActive(true);
+            resumeButtonUI.SetActive(false);
+            gameOverTextUI.SetActive(true);
         }
 
         if (health > maxHealth)
