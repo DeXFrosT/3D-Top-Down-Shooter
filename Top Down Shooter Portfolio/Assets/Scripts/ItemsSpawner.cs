@@ -7,8 +7,8 @@ public class ItemsSpawner : MonoBehaviour
     [SerializeField] GameObject healthPotionPrefab;
     [SerializeField] GameObject boosterPotionPrefab;
 
-    private int _healthPotionCount;
-    private int _boosterPotionCount;
+    private int healthPotionCount;
+    private int boosterPotionCount;
 
     private float startDelay = 10.0f;
     private float spawnDelay = 15.0f;
@@ -16,17 +16,17 @@ public class ItemsSpawner : MonoBehaviour
     void Update()
     {
         // Health Potion counter.
-        _healthPotionCount = GameObject.FindGameObjectsWithTag("Health").Length;
+        healthPotionCount = GameObject.FindGameObjectsWithTag("Health").Length;
 
-        if (_healthPotionCount < 1)
+        if (healthPotionCount < 1)
         {
             InvokeRepeating("SpawnHealthPotion", startDelay, spawnDelay);
         }
 
         // Booster counter.
-        _boosterPotionCount = GameObject.FindGameObjectsWithTag("Booster").Length;
+        boosterPotionCount = GameObject.FindGameObjectsWithTag("Booster").Length;
 
-        if (_boosterPotionCount < 1)
+        if (boosterPotionCount < 1)
         {
             InvokeRepeating("SpawnBoosterPotion", startDelay, spawnDelay);
         }
@@ -35,12 +35,12 @@ public class ItemsSpawner : MonoBehaviour
     // Spawn Health Position prefab at random position.
     void SpawnHealthPotion()  
     {        
-            float _spawnPosX = Random.Range(-5, 7);
-            float _spawnPosZ = Random.Range(-10, 10);
+            float spawnPosX = Random.Range(-5, 7);
+            float spawnPosZ = Random.Range(-10, 10);
 
-            Vector3 _randomPos = new Vector3(_spawnPosX, 0.1f, _spawnPosZ);
+            Vector3 randomPos = new Vector3(spawnPosX, 0.1f, spawnPosZ);
 
-            Instantiate(healthPotionPrefab, _randomPos, Quaternion.identity);
+            Instantiate(healthPotionPrefab, randomPos, Quaternion.identity);
 
             CancelInvoke("SpawnHealthPotion");     
     }
@@ -48,12 +48,12 @@ public class ItemsSpawner : MonoBehaviour
     // Spawn Booster Potion prefab at random position.
     void SpawnBoosterPotion()  
     {
-            float _spawnPosX = Random.Range(-6, 6);
-            float _spawnPosZ = Random.Range(-10, 10);
+            float spawnPosX = Random.Range(-6, 6);
+            float spawnPosZ = Random.Range(-10, 10);
 
-            Vector3 _randomPos = new Vector3(_spawnPosX, 0.1f, _spawnPosZ);
+            Vector3 randomPos = new Vector3(spawnPosX, 0.1f, spawnPosZ);
 
-            Instantiate(boosterPotionPrefab, _randomPos, Quaternion.identity);
+            Instantiate(boosterPotionPrefab, randomPos, Quaternion.identity);
 
             CancelInvoke("SpawnBoosterPotion");      
     }

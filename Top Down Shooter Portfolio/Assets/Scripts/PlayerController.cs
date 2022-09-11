@@ -4,19 +4,16 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
     [SerializeField] private float defaultSpeed;
+
+    private float speed;
+    private float zBound = 10.5f;
+    private float xBound = 8.5f;
+    private float boostTimer = 0;
 
     private Rigidbody playerRB;
 
-    private float speed;
-
-    private float zBound = 10.5f;
-    private float xBound = 8.5f;
-
-    private float boostTimer = 0;
     private bool boosting = false;
-
 
     void Start()
     {
@@ -55,7 +52,6 @@ public class PlayerController : MonoBehaviour
 
     void ConstrainMovement()
     {
-
         if(transform.position.z < -zBound)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, -zBound);

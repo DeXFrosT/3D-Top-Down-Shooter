@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Damage : MonoBehaviour
 {
+    [SerializeField] private Collider bulletPrefab;
+    [HideInInspector] public float currentHealth;
 
     public float damage;
     public float maxHealth;
-    [HideInInspector] public float currentHealth;
-    [SerializeField] private Collider bulletPrefab;
 
     public int points;
 

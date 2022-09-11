@@ -5,11 +5,10 @@ using UnityEngine;
 public class PlayerGun : MonoBehaviour
 {
     [SerializeField] Transform firingPoint;
-    [SerializeField] GameObject buletPrefab;
-    public float firingSpeed;
 
     public static PlayerGun Instance;
 
+    public float firingSpeed;
     private float lastTimeShot = 0;
 
     void Awake()
@@ -22,7 +21,7 @@ public class PlayerGun : MonoBehaviour
         if(lastTimeShot + firingSpeed <= Time.time)
         {
             lastTimeShot = Time.time;
-            Instantiate(buletPrefab, firingPoint.position, firingPoint.rotation);
+            ObjectPooler.Instance.SpawnFromPool("Bullet", firingPoint.position, firingPoint.rotation);
         }         
     }
 }

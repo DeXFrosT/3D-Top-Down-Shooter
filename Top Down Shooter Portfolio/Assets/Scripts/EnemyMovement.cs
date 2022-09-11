@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] private float _speed;
-    private Rigidbody _enemyRB;
-    private GameObject _playerPos;
+    [SerializeField] private float speed;
+    private Rigidbody enemyRB;
+    private GameObject playerPos;
 
     void Start()
     {
-        _enemyRB = GetComponent<Rigidbody>();
-        _playerPos = GameObject.FindGameObjectWithTag("Player");
+        enemyRB = GetComponent<Rigidbody>();
+        playerPos = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Update()
     {
         if(PauseMenu.GameIsPaused == false)
         {
-            _enemyRB.AddForce((_playerPos.transform.position - transform.position).normalized * _speed);
+            enemyRB.AddForce((playerPos.transform.position - transform.position).normalized * speed);
 
-            transform.LookAt(_playerPos.transform.position);
+            transform.LookAt(playerPos.transform.position);
         }        
     }
 

@@ -6,8 +6,10 @@ public class EnemySpawner : MonoBehaviour
 {
     public GameObject[] enemyPrefab;
     public GameObject[] spawnPoints;
+
     public float startDelay = 2.0f;
     public float spawnDelay = 1.0f;
+
     public int maxEnemy = 15;
     private int enemy;
 
@@ -34,7 +36,4 @@ public class EnemySpawner : MonoBehaviour
 
         CancelInvoke();
     }
-
-    // Object pooling - https://www.youtube.com/watch?v=JRLJD7QSQN4&ab_channel=Ajackster
-
 }

@@ -5,8 +5,9 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [SerializeField] private float maxProjectileDistance;
-    private Vector3 firingPoint;
     public float projectileSpeed = 10;
+
+    private Vector3 firingPoint;
 
     void Start()
     {
@@ -22,7 +23,7 @@ public class Projectile : MonoBehaviour
     {
         if (Vector3.Distance(firingPoint, transform.position) > maxProjectileDistance)
         {
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
         }
         else
         {
@@ -30,11 +31,11 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider collider)  // Destroy object with Enemy tag.
+    void OnTriggerEnter(Collider collider)  // Disable object upon collision with Enemy tag object.
     {
         if (collider.gameObject.CompareTag("Enemy"))
         {
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
         }
     }
 }

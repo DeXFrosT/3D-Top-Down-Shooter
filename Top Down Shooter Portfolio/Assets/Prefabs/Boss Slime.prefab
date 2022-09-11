@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37f7e724a45bd4748a366b30c80ccab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 10
+  speed: 10
 --- !u!114 &6260071907070870980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,10 +296,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a4a675e66127c4db620245a53877e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 5967870704740972784, guid: a91c5f695aae6504db157f9844f65172, type: 3}
+  currentHealth: 0
   damage: 10
   maxHealth: 70
-  currentHealth: 0
-  bulletPrefab: {fileID: 5967870704740972784, guid: a91c5f695aae6504db157f9844f65172, type: 3}
   points: 100
 --- !u!1 &7368201100484660759
 GameObject:

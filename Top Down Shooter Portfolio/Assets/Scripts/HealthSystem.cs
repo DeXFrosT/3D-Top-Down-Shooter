@@ -7,13 +7,13 @@ using UnityEngine.SceneManagement;
 public class HealthSystem : MonoBehaviour
 {
     [SerializeField] private float health;
+    private float healValue = 10f;
     public float maxHealth;
     public float damageValue;
-    private float healValue = 10f;
 
-    public GameObject healthBarUI;
     public Slider slider;
 
+    public GameObject healthBarUI;
     public GameObject pauseMenuUI;
     public GameObject gameOverTextUI;
     public GameObject resumeButtonUI;
