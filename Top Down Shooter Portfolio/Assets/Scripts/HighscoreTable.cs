@@ -44,10 +44,3 @@ public class HighscoreTable : MonoBehaviour
         }
     }
 }
-
-
-// https://www.youtube.com/watch?v=iAbaqGYdnyI&ab_channel=CodeMonkey
-// OR
-// https://www.youtube.com/watch?v=x0Wy7jQ7EFU&ab_channel=EEDev
-// OR
-// https://www.youtube.com/watch?v=FSEbPxf0kfs&ab_channel=DapperDino
